@@ -10,6 +10,7 @@ use app\models\Users;
 use Yii;
 use app\models\Order;
 use app\models\OrderSearch;
+use yii\base\Model;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -18,6 +19,15 @@ use yii\web\NotFoundHttpException;
  */
 class OrderController extends Controller
 {
+
+    /**
+     * View action
+     *
+     * Action для отображения информации о заказе
+     *
+     * @id индентификатор заказа
+     * @return string
+     */
     public function actionView($id)
     {
         $searchModel = new PerformerSearch($id);
@@ -27,6 +37,14 @@ class OrderController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    /**
+     * Index action
+     *
+     * Action для отображения всех заказов
+     *
+     * @return string
+     */
     public function actionIndex()
     {
         $model=new DropListUser();
@@ -39,6 +57,13 @@ class OrderController extends Controller
         ]);
     }
 
+    /**
+     * Create action
+     *
+     * Action создания нового заказа
+     *
+     * @return string
+     */
     public function actionCreate()
     {
         $model = new CreateOrder();
@@ -66,6 +91,12 @@ class OrderController extends Controller
             'model' => $model,
         ]);
     }
+
+    /**
+     * Update action
+     *
+     * Action обновления исполнителя заказа
+     */
     public function actionUpdate($order, $performer_id, $cause="Без причины")
     {
 
@@ -85,6 +116,13 @@ class OrderController extends Controller
         $customer->save();
     }
 
+    /**
+     * Найти заказ
+     *
+     * Поиск заказа по идентификатору
+     *
+     * @return Model
+     */
     protected function findModel($id)
     {
         if (($model = Order::findOne($id)) !== null) {

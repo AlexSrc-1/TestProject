@@ -4,6 +4,9 @@ namespace app\models;
 
 use yii\base\Model;
 
+/**
+ * Модель создания нового заказа.
+ */
 class CreateOrder extends Model
 {
     public $fullname;

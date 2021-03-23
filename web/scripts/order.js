@@ -1,3 +1,6 @@
+/**
+ * Обработка нажатия на кнопку "Сменить исполнителя"
+ */
 $('.BtnModalId').click(function(e){
 
     e.preventDefault();
@@ -16,11 +19,18 @@ $('.BtnModalId').click(function(e){
     return false;
 
 });
+
+/**
+ * Скрыть информацию об ошибке в модальном окне
+ */
 var modal_error = $('.modal_error');
 $(document).ready(function(){
     modal_error.hide();
 });
 
+/**
+ * Обработка нажатия на кнопку "Назначить" в модальном окне
+ */
 $('#appointBtn').click(function(e){
     e.preventDefault();
     var url = 'index.php'
@@ -45,6 +55,9 @@ $('#appointBtn').click(function(e){
 
 });
 
+/**
+ * Обработка нажатия на кнопку "Отменить" в модальном окне
+ */
 $('#cancelBtn').click(function(e){
     e.preventDefault();
     var modal = $('#your-modal');
