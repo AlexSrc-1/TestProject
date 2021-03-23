@@ -1,0 +1,20 @@
+.order-search form{
+    display: flex;
+    align-items: baseline;
+}
+
+.search_item {
+    display: flex;
+    margin: 0 10px;
+}
+
+.search_content {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.btn_create_order{
+    margin: 0 0 10px 0;
+}
