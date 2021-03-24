@@ -1,8 +1,7 @@
 /**
  * Обработка нажатия на кнопку "Сменить исполнителя"
  */
-$('.BtnModalId').click(function(e){
-
+$(document).on('click', '.BtnModalId', function(e) {
     e.preventDefault();
     var modal = $('#your-modal');
     modal.modal('show')
@@ -17,7 +16,6 @@ $('.BtnModalId').click(function(e){
     }
 
     return false;
-
 });
 
 /**
@@ -43,16 +41,13 @@ $('#appointBtn').click(function(e){
             order: modal.attr('order'),
             performer_id : performer_id,
             cause: $('#cause').val()}, function(data) {
-
+            $.pjax.reload({container: '#pjax_1'});
+            modal.modal('hide');
         });
-        // $( "tr[data-key='"+modal.attr('order')+"']" )
-        $.pjax.reload({container: '#pjax_1'});
-        modal.modal('hide');
     }else{
         modal_error.show();
     }
     return false;
-
 });
 
 /**
